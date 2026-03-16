@@ -2,7 +2,7 @@
 title: "Accelerating PDE Data Generation via Differential Operator Action in Solution Space"
 date: 2024-05-12 00:01:00 +0800
 selected: false
-pub: "International COnference on Machine Learning (ICML 2024)"
+pub: "International COnference on Machine Learning (ICML)"
 pub_date: "2024"
 # semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-

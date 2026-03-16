@@ -2,7 +2,7 @@
 title: "STNet: Spectral Transformation Network for Solving Operator Eigenvalue Problem"
 date: 2025-09-12 00:01:00 +0800
 selected: false
-pub: "Advances in Neural Information Processing Systems (NeurIPS 2025)"
+pub: "Advances in Neural Information Processing Systems (NeurIPS)"
 pub_date: "2025"
 # semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-

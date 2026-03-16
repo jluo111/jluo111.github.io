@@ -2,7 +2,7 @@
 title: "Accelerating Eigenvalue Dataset Generation via Chebyshev Subspace Filter"
 date: 2025-11-12 00:01:00 +0800
 selected: false
-pub: "International Conference on Learning and Representations (ICLR 2026)"
+pub: "International Conference on Learning and Representations (ICLR)"
 pub_date: "2025"
 # semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-

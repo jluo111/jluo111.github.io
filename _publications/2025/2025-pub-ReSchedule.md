@@ -2,7 +2,7 @@
 title: "Scheduling Your LLM Reinforcement Learning with Reasoning Trees"
 date: 2025-11-12 00:01:00 +0800
 selected: true
-pub: "International Conference on Learning and Representations (ICLR 2026)"
+pub: "International Conference on Learning and Representations (ICLR)"
 # pub_pre: "Submitted to "
 # pub_post: 'Under review.'
 # pub_last: ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
