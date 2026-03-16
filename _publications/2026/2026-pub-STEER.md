@@ -1,8 +1,8 @@
 ---
 title: "Rethinking Entropy Interventions in RLVR: An Entropy Change Perspective"
-date: 2025-09-12 00:01:00 +0800
+date: 2026-09-12 00:01:00 +0800
 selected: true
-pub: "ArXiv"
+# pub: "ArXiv"
 # pub_pre: "Submitted to "
 pub_post: 'Under review.'
 # pub_last: ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
