@@ -23,11 +23,12 @@ short_bio_text_justify: false
 short_bio: >-
   <p>
     I am a first-year Ph.D. student in the Department of Applied Mathematics and Statistics at Stony Brook University, advised by Prof. Chao Chen. 
-    My current research interests include how RL helps LLM safety and diffusion language models.
+    My current research interests focus on the post-training and applications of diffusion large language models. 
+    If you share similar interests and would like to connect, feel free to reach out via email.
   </p>
   <p>
     Before joining Stony Brook University, I received my M.E. degree in Communication Engineering from University of Science and Technology of China in 2025. 
-    During my master's program, I worked on several research projects related to deep learning and its applications. I work closely with Hong Wang and Wenhan Gao.
+    During my master's program, I worked on several nice research projects related to deep learning and its applications. I work closely with Hong Wang and Wenhan Gao.
   </p>
 
 portrait_url: /assets/images/photos/Portrait SD.jpg
