@@ -2,7 +2,7 @@
 title: "ReCreate: An Experience-Driven Framework for the Automatic Creation of Domain Agents"
 date: 2026-09-12 00:01:00 +0800
 selected: true
-pub: "Annual Meeting of the Association for Computational Linguistics (ACL, Main Conference)"
+pub: "Annual Meeting of the Association for Computational Linguistics (ACL)"
 # pub_pre: "Submitted to "
 # pub_post: 'Under review.'
 # pub_last: ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
