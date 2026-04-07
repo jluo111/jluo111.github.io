@@ -5,7 +5,7 @@ selected: true
 pub: "Annual Meeting of the Association for Computational Linguistics (ACL)"
 # pub_pre: "Submitted to "
 # pub_post: 'Under review.'
-pub_last: ' <span class="badge badge-pill badge-publication badge-success">Oral</span>'
+# pub_last: ' <span class="badge badge-pill badge-publication badge-success">Oral</span>'
 pub_date: "2026"
 # semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-
