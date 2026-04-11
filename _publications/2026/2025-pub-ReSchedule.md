@@ -22,7 +22,7 @@ authors:
   - Hande Dong
   - Jiawei Chen
 links:
-  Paper: https://openreview.net/pdf/156efed035a3eb8f8914a33059dd680054d5e73d.pdf
+  Paper: https://arxiv.org/pdf/2510.24832
   Code: https://github.com/zz-haooo/Re-Schedule
   # Unsplash: https://github.com/smart-JLuo/NeurKItt
 ---
