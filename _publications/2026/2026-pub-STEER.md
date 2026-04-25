@@ -1,7 +1,7 @@
 ---
 title: "Rethinking Entropy Interventions in RLVR: An Entropy Change Perspective"
 date: 2026-09-12 00:01:00 +0800
-selected: true
+selected: false
 pub: "Annual Meeting of the Association for Computational Linguistics (ACL)"
 # pub_pre: "Submitted to "
 # pub_post: 'Under review.'
