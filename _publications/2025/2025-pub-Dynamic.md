@@ -14,7 +14,7 @@ authors:
   - Ruichen Xu
   - Yi Liu
 links:
-  Paper: https://openreview.net/pdf?id=B0E2yjrNb8
+  Paper: https://openreview.net/forum?id=B0E2yjrNb8
   Code: https://github.com/wenhangao21/TMLR25_DSFNO
   # Unsplash: https://github.com/smart-JLuo/NeurKItt
 ---
