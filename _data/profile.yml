@@ -35,18 +35,6 @@ portrait_url: /assets/images/photos/Portrait SD.jpg
 portrait_caption: >-
   NeurIPS 2025 SD.
 
-education:
-- name: Stony Brook University
-  logo: /assets/images/badges/SBU_logo.png
-  position: >- 
-    Department of Data Science <br/>
-    Ph.D. Student
-  date: Sep. 2025 - present
-- name: Peking University
-  logo: /assets/images/badges/USTC_logo.jpg
-  position: M.E. in Communication Engineering
-  date: Sep. 2022 - Jul. 2025
-
 
 
 # awards:
