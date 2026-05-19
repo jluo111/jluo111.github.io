@@ -13,7 +13,7 @@ authors:
   - Jian Luo
   - Jie Wang
   - Hong Wang
-  - Huangshuo Dong
+  - Huanshuo Dong
   - Zijie Geng
   - Hanzhu Chen
   - Yufei Kuang
