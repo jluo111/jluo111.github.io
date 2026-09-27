@@ -1,0 +1,24 @@
+{%- comment -%}
+    Sets <html data-theme="light|dark"> before the first paint, so the page never flashes the wrong theme.
+    Order of precedence: the visitor's saved choice (theme switch) > `theme.default` in _data/display.yml
+    (light | dark | auto) > with "auto", the visitor's system setting.
+    Must come after <meta name="theme-color"> and before the stylesheets.
+{%- endcomment -%}
+{%- assign theme_default = site.data.display.theme.default | default: "auto" | downcase -%}
+{%- unless theme_default == "light" or theme_default == "dark" -%}{%- assign theme_default = "auto" -%}{%- endunless -%}
+<script>
+    (function () {
+        var theme = window.__themeDefault = "{{ theme_default }}";
+        try {
+            var saved = localStorage.getItem("theme");
+            if (saved === "light" || saved === "dark") { theme = saved; }
+        } catch (e) {}
+        if (theme === "auto") {
+            theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+        // browser toolbar tint = page background (--paper of each theme in assets/css/global.css)
+        var tint = document.querySelector('meta[name="theme-color"]');
+        if (tint) { tint.setAttribute("content", theme === "dark" ? "#0B1321" : "#FAF8F4"); }
+    })();
+</script>

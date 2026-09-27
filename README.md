@@ -66,6 +66,15 @@ lines is a display equation. A single `$` is never math, so prices in prose are 
 The post appears at `/blog/YYYY/slug/`. Add `published: false` to keep a draft out of the live site
 (`_posts/2026-09-26-writing-posts-in-markdown.md` is such a draft and doubles as a syntax reference).
 
+## Day / night
+
+The switch in the navbar flips between the light and the dark theme and remembers the visitor's choice
+in their browser. What a first-time visitor sees is `theme.default` in `_data/display.yml`:
+`auto` (follow their system setting), `light` or `dark`.
+
+Both themes are plain lists of CSS variables at the top of `assets/css/global.css`
+(`:root` = light, `:root[data-theme="dark"]` = dark); nothing else in the stylesheet contains a colour.
+
 ## Local preview
 
 ```bash

@@ -4,6 +4,11 @@ homepage:
   show_selected_publications: true
   num_news: 10
 
+theme:
+  # What a first-time visitor sees: light | dark | auto (auto = follow their system setting).
+  # Once they use the day/night switch, their own choice is remembered instead.
+  default: auto
+
 blog:
   # One line under the "Blog" title
   description: >-
