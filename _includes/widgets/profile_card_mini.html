@@ -21,10 +21,7 @@
 
         <p class="profile-role">
             {%- for position in site.data.profile.positions -%}
-            <span class="d-block{% if forloop.last and forloop.length > 1 %} profile-org{% endif %}">
-                {%- if position.logo -%}<img class="inline-badge" src="{{ position.logo | relative_url }}" alt="">{%- endif -%}
-                {{- position.name -}}
-            </span>
+            <span class="d-block{% if forloop.last and forloop.length > 1 %} profile-org{% endif %}">{{ position.name }}</span>
             {%- endfor -%}
         </p>
 
