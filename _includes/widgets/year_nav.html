@@ -1,0 +1,7 @@
+{%- comment -%} Sticky year navigation (desktop). `groups` is the output of group_by_exp on the year. {%- endcomment -%}
+<nav id="navbar-year" class="nav year-nav flex-column sticky-top" aria-label="Jump to year">
+    <span class="year-nav-label">Year</span>
+    {%- for group in include.groups -%}
+    <a class="nav-link" href="#year-{{ group.name }}">{{ group.name }} <span class="year-nav-count" aria-hidden="true">{{ group.size }}</span></a>
+    {%- endfor -%}
+</nav>

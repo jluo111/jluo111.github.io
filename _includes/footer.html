@@ -1,15 +1,20 @@
-<footer class="footer border-top py-2 mt-5 bg-white small">
+{%- if site.data.profile.gscholar contains 'scholar.google' -%}
+    {%- assign footer_gscholar_url = site.data.profile.gscholar -%}
+{%- else -%}
+    {%- assign footer_gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
+{%- endif -%}
+<footer class="site-footer">
     <div class="{% if page.container_class %}{{ page.container_class }}{% else %}container-lg{% endif %}">
-        <div class="row my-3">
-            <div class="col-6">
-                <div class="text-muted">
-                    <i>Last updated: {{ "now" | date: "%b %Y" }}</i>
-                </div>
+        <div class="footer-inner">
+            <div>
+                <span class="footer-name">{{ site.data.profile.primary_name }}</span>
+                <span>&copy; {{ site.time | date: "%Y" }} &middot; Last updated {{ site.time | date: "%b %Y" }}</span>
             </div>
-            <div class="col-6">
-                <div class="text-right text-muted">
-                    {{ site.data.display.footer_text }}
-                </div>
+            <div class="footer-links">
+                {% if site.data.profile.gscholar %}<a href="{{ footer_gscholar_url }}" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>{% endif %}
+                {% if site.data.profile.github %}<a href="https://github.com/{{ site.data.profile.github }}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>{% endif %}
+                <a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS feed" title="RSS feed"><i class="fa-solid fa-rss"></i></a>
+                {% if site.data.display.footer_text %}<span class="footer-credit">{{ site.data.display.footer_text }}</span>{% endif %}
             </div>
         </div>
     </div>

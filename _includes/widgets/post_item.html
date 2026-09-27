@@ -1,0 +1,27 @@
+{%- assign post = include.post -%}
+{%- if post.reading_time -%}
+    {%- assign post_minutes = post.reading_time -%}
+{%- else -%}
+    {%- capture post_minutes -%}{% include widgets/reading_time.html content=post.content %}{%- endcapture -%}
+{%- endif -%}
+<article class="pub post-item">
+    <div class="row no-gutters">
+        {%- if post.cover -%}
+        <div class="col-12 col-md-4 col-xl-3">
+            <div class="pub-cover pub-cover--photo">
+                <img class="lazy" data-src="{{ post.cover | relative_url }}" src="{{ '/assets/images/empty_300x200.png' | relative_url }}" alt="">
+            </div>
+        </div>
+        {%- endif -%}
+        <div class="col-12{% if post.cover %} col-md-8 col-xl-9 pub-body{% endif %}">
+            <p class="post-meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time><span class="dot" aria-hidden="true">·</span>{{ post_minutes | strip }} min read
+            </p>
+            <h3 class="pub-title"><a class="stretched-link" href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p class="post-excerpt">{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncatewords: 42 }}</p>
+            {%- if post.tags.size > 0 -%}
+            <div class="tag-row">{% for t in post.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>
+            {%- endif -%}
+        </div>
+    </div>
+</article>

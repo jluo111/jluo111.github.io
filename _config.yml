@@ -11,14 +11,26 @@
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# They also feed the blog's Atom feed (/feed.xml) and the <meta name="description"> tag.
+title: Jian Luo
+author: Jian Luo
+url: "https://jluo111.github.io"
 baseurl: "" # the subpath of your site, e.g. /blog
+description: >-
+  Jian Luo — Ph.D. student in Applied Mathematics and Statistics at Stony Brook University,
+  working on the post-training and applications of large language models.
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  math_engine: mathjax            # emits \( \) and \[ \]; rendered in the browser by KaTeX (see _layouts/default.html)
+  footnote_backlink: "&#8617;&#xFE0E;"
 plugins:
   - jekyll-email-protect
+  - jekyll-feed                   # Atom feed of the blog at /feed.xml (whitelisted on GitHub Pages)
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -38,3 +50,13 @@ collections:
   - publications
   # - news
   # - showcase
+
+# Blog posts live in _posts/YYYY-MM-DD-slug.md and are served at /blog/YYYY/slug/
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      navbar_title: Blog
+      permalink: /blog/:year/:title/

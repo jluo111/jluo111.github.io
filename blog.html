@@ -1,0 +1,46 @@
+---
+layout: default
+title: Blog
+navbar_title: Blog
+permalink: /blog/
+body_attr: >-
+  data-spy="scroll" data-target="#navbar-year" data-offset="120"
+---
+
+{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+
+<header class="page-head">
+    <p class="eyebrow">Writing</p>
+    <h1 class="page-title">Blog</h1>
+    <p class="page-lede">
+        {{ site.data.display.blog.description }}
+        <a href="{{ '/feed.xml' | relative_url }}"><i class="fa-solid fa-rss fa-xs" aria-hidden="true"></i> RSS</a>
+    </p>
+</header>
+
+{% if site.posts.size == 0 %}
+<div class="surface card-pad empty-state">No posts yet — the first one is on its way.</div>
+{% else %}
+<nav class="year-jump d-lg-none" aria-label="Jump to year">
+    {%- for year in posts_by_year -%}<a href="#year-{{ year.name }}">{{ year.name }}</a>{%- endfor -%}
+</nav>
+
+<div class="row">
+    <div class="col-12 col-lg-10">
+        {% for year in posts_by_year %}
+        <section class="year-group" id="year-{{ year.name }}">
+            <h2 class="year-heading"><span>{{ year.name }}</span><small>{{ year.size }} {% if year.size == 1 %}post{% else %}posts{% endif %}</small></h2>
+            <div class="surface list-surface pub-list">
+                {%- for post in year.items -%}
+                {% include widgets/post_item.html post=post %}
+                {%- endfor -%}
+            </div>
+        </section>
+        {% endfor %}
+    </div>
+
+    <div class="col-lg-2 d-none d-lg-block">
+        {% include widgets/year_nav.html groups=posts_by_year %}
+    </div>
+</div>
+{% endif %}

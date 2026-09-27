@@ -3,30 +3,48 @@ layout: default
 title : Publications
 navbar_title: Publications
 body_attr: >-
-  data-spy="scroll" data-target="#navbar-year" data-offset="100"
+  data-spy="scroll" data-target="#navbar-year" data-offset="120"
 ---
 
-{% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
+{%- comment -%}
+    Sorted by `date`, grouped by the year shown in the venue chip: the last 4 characters of
+    `pub_date` when present, else the year of `date` (so the heading never disagrees with the chip).
+{%- endcomment -%}
+{% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y' | append: item.pub_date | slice: -4, 4" %}
+{%- if site.data.profile.gscholar contains 'scholar.google' -%}
+    {%- assign gscholar_url = site.data.profile.gscholar -%}
+{%- else -%}
+    {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
+{%- endif -%}
+
+<header class="page-head">
+    <p class="eyebrow">Research</p>
+    <h1 class="page-title">Publications</h1>
+    <p class="page-lede">
+        {{ site.publications | size }} papers &middot; * equal contribution &middot; <sup>#</sup> corresponding author
+        {%- if site.data.profile.gscholar %} &middot; <a href="{{ gscholar_url }}" target="_blank" rel="noopener">Google Scholar <i class="fa-solid fa-arrow-up-right-from-square fa-xs" aria-hidden="true"></i></a>{% endif %}
+    </p>
+</header>
+
+<nav class="year-jump d-lg-none" aria-label="Jump to year">
+    {%- for year in pubs_by_year -%}<a href="#year-{{ year.name }}">{{ year.name }}</a>{%- endfor -%}
+</nav>
 
 <div class="row">
     <div class="col-12 col-lg-10">
         {% for year in pubs_by_year %}
-        {% assign num_papers = year.items | size %}
-        <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
-        <div class="my-0 p-0 bg-white shadow-sm rounded-xl">
-            {% for item in year.items %}
-                {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
-            {% endfor %}
-        </div>
+        <section class="year-group" id="year-{{ year.name }}">
+            <h2 class="year-heading"><span>{{ year.name }}</span><small>{{ year.size }} {% if year.size == 1 %}paper{% else %}papers{% endif %}</small></h2>
+            <div class="surface list-surface pub-list">
+                {%- for item in year.items -%}
+                {% include widgets/publication_item.html item=item %}
+                {%- endfor -%}
+            </div>
+        </section>
         {% endfor %}
     </div>
 
-    <div class="col-2 d-none d-lg-block">
-        <div id="navbar-year" class="nav nav-pills flex-column sticky-top" style="top: 80px">
-            {% for year in pubs_by_year %}
-            <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
-            {% endfor %}
-        </div>
+    <div class="col-lg-2 d-none d-lg-block">
+        {% include widgets/year_nav.html groups=pubs_by_year %}
     </div>
-
 </div>

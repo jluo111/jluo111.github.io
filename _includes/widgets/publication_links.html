@@ -1,0 +1,44 @@
+{%- comment -%}
+    Link pills of a publication. Each entry of `links` in the front matter is
+        Name: https://...                      (opens in a new tab)
+        Name: {url: https://..., target: _self}
+    The icon is chosen from the name (Paper, PDF, arXiv, Code, Project, Slides,
+    Poster, Video, BibTeX, Data, Blog, ...); unknown names get a generic link icon.
+{%- endcomment -%}
+{%- for link in include.links -%}
+    {%- if link[1].url -%}
+        {%- assign _url = link[1].url -%}
+        {%- assign _target = link[1].target | default: "_blank" -%}
+    {%- else -%}
+        {%- assign _url = link[1] -%}
+        {%- assign _target = "_blank" -%}
+    {%- endif -%}
+    {%- assign _name = link[0] | downcase -%}
+    {%- assign _host = _url | downcase -%}
+    {%- if _name contains "arxiv" -%}
+        {%- assign _icon = "ai ai-arxiv" -%}
+    {%- elsif _name contains "paper" or _name contains "pdf" or _name contains "openreview" -%}
+        {%- assign _icon = "fa-regular fa-file-lines" -%}
+    {%- elsif _name contains "code" or _name contains "github" -%}
+        {%- if _host contains "github.com" -%}{%- assign _icon = "fa-brands fa-github" -%}{%- else -%}{%- assign _icon = "fa-solid fa-code" -%}{%- endif -%}
+    {%- elsif _name contains "project" or _name contains "website" or _name contains "page" -%}
+        {%- assign _icon = "fa-solid fa-globe" -%}
+    {%- elsif _name contains "slide" -%}
+        {%- assign _icon = "fa-solid fa-person-chalkboard" -%}
+    {%- elsif _name contains "poster" -%}
+        {%- assign _icon = "fa-regular fa-image" -%}
+    {%- elsif _name contains "video" or _name contains "talk" or _name contains "youtube" -%}
+        {%- assign _icon = "fa-solid fa-play" -%}
+    {%- elsif _name contains "bib" or _name contains "cite" or _name contains "citation" -%}
+        {%- assign _icon = "fa-solid fa-quote-right" -%}
+    {%- elsif _name contains "data" -%}
+        {%- assign _icon = "fa-solid fa-database" -%}
+    {%- elsif _name contains "blog" or _name contains "post" -%}
+        {%- assign _icon = "fa-solid fa-pen-nib" -%}
+    {%- elsif _name contains "model" or _name contains "hugging" -%}
+        {%- assign _icon = "fa-solid fa-cube" -%}
+    {%- else -%}
+        {%- assign _icon = "fa-solid fa-link" -%}
+    {%- endif -%}
+    <a class="pub-link" target="{{ _target }}"{% if _target == "_blank" %} rel="noopener"{% endif %} href="{{ _url }}"><i class="{{ _icon }}" aria-hidden="true"></i>{{ link[0] }}</a>
+{%- endfor -%}

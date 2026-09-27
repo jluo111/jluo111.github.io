@@ -1,0 +1,79 @@
+{%- comment -%}
+    Award / presentation / status badges of a publication.
+
+    Front matter (any of these):
+        award: Spotlight
+        awards: [Oral, Outstanding Paper Award]
+        awards:
+          - { name: "Best Student Paper Finalist", type: honor }   # `type` forces a tier
+        status: Under Review                                       # passed in as include.status
+
+    Legacy `pub_last: '<span class="badge ...">Spotlight</span>'` still works: the text inside
+    each <span> becomes a badge.
+
+    Tier = first keyword match on the lower-cased text (see the chain below); each tier has its
+    own colour in assets/css/global.css (.award--<tier>).
+{%- endcomment -%}
+{%- assign _item = include.item -%}
+{%- assign _awards = "" | split: "" -%}
+{%- if _item.awards -%}
+    {%- assign _awards = _item.awards -%}
+{%- elsif _item.award.first -%}
+    {%- comment -%} a list written under `award:` is treated like `awards:` {%- endcomment -%}
+    {%- assign _awards = _item.award -%}
+{%- elsif _item.award -%}
+    {%- assign _awards = _item.award | join: "@@" | split: "@@" -%}
+{%- elsif _item.pub_last contains "badge" -%}
+    {%- assign _awards = _item.pub_last | replace: "</span>", "@@" | strip_html | split: "@@" -%}
+{%- endif -%}
+{%- if include.status and include.status != "" -%}
+    {%- assign _status = include.status | split: "@@" -%}
+    {%- assign _awards = _awards | concat: _status -%}
+{%- endif -%}
+{%- for _award in _awards -%}
+    {%- if _award.name -%}
+        {%- assign _name = _award.name | strip -%}
+        {%- assign _tier = _award.type | default: "" | downcase -%}
+    {%- else -%}
+        {%- assign _name = _award | strip -%}
+        {%- assign _tier = "" -%}
+    {%- endif -%}
+    {%- if _name == "" -%}{%- continue -%}{%- endif -%}
+    {%- assign _key = _name | downcase -%}
+    {%- if _tier == "" -%}
+        {%- if _key contains "honorable" or _key contains "honourable" or _key contains "mention" or _key contains "runner" -%}
+            {%- assign _tier = "honor" -%}
+        {%- elsif _key contains "best" or _key contains "outstanding" or _key contains "distinguished" or _key contains "award" or _key contains "prize" -%}
+            {%- assign _tier = "best" -%}
+        {%- elsif _key contains "oral" -%}
+            {%- assign _tier = "oral" -%}
+        {%- elsif _key contains "spotlight" -%}
+            {%- assign _tier = "spotlight" -%}
+        {%- elsif _key contains "highlight" -%}
+            {%- assign _tier = "highlight" -%}
+        {%- elsif _key contains "workshop" -%}
+            {%- assign _tier = "workshop" -%}
+        {%- elsif _key contains "review" or _key contains "submitted" or _key contains "submission" -%}
+            {%- assign _tier = "pending" -%}
+        {%- elsif _key contains "preprint" or _key contains "arxiv" -%}
+            {%- assign _tier = "preprint" -%}
+        {%- elsif _key contains "poster" -%}
+            {%- assign _tier = "poster" -%}
+        {%- else -%}
+            {%- assign _tier = "generic" -%}
+        {%- endif -%}
+    {%- endif -%}
+    {%- case _tier -%}
+        {%- when "best" -%}{%- assign _icon = "fa-solid fa-trophy" -%}
+        {%- when "honor" -%}{%- assign _icon = "fa-solid fa-medal" -%}
+        {%- when "oral" -%}{%- assign _icon = "fa-solid fa-microphone-lines" -%}
+        {%- when "spotlight" -%}{%- assign _icon = "fa-solid fa-star" -%}
+        {%- when "highlight" -%}{%- assign _icon = "fa-solid fa-bookmark" -%}
+        {%- when "workshop" -%}{%- assign _icon = "fa-solid fa-users" -%}
+        {%- when "pending" -%}{%- assign _icon = "fa-regular fa-hourglass-half" -%}
+        {%- when "preprint" -%}{%- assign _icon = "fa-regular fa-file-lines" -%}
+        {%- when "poster" -%}{%- assign _icon = "fa-solid fa-thumbtack" -%}
+        {%- else -%}{%- assign _icon = "fa-solid fa-award" -%}
+    {%- endcase -%}
+    <span class="award award--{{ _tier }}"><i class="{{ _icon }}" aria-hidden="true"></i>{{ _name }}</span>
+{%- endfor -%}

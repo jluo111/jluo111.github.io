@@ -6,7 +6,7 @@ pub: "Advances in Neural Information Processing Systems (NeurIPS)"
 pub_date: "2025"
 # semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-
-  we propose the Spectral Transformation Network (STNet). During each iteration, STNet uses approximate eigenvalues and eigenfunctions to perform spectral transformations on the original operator, turning it into an equivalent but easier problem.
+  We propose the Spectral Transformation Network (STNet). During each iteration, STNet uses approximate eigenvalues and eigenfunctions to perform spectral transformations on the original operator, turning it into an equivalent but easier problem.
 cover: /assets/images/covers/STNET_cover.jpg
 authors:
   - Hong Wang*
@@ -16,7 +16,7 @@ authors:
   - Jian Luo
   - Huanshuo Dong
 links:
-  Paper: https://arxiv.org/pdf/2510.02683
+  Paper: https://arxiv.org/abs/2510.23986
   Code: https://github.com/j1y1x/STNet
   # Unsplash: https://github.com/smart-JLuo/NeurKItt
 ---

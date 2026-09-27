@@ -1,0 +1,52 @@
+---
+layout: default
+---
+{%- if page.reading_time -%}
+    {%- assign rt = page.reading_time -%}
+{%- else -%}
+    {%- capture rt -%}{% include widgets/reading_time.html content=content %}{%- endcapture -%}
+{%- endif -%}
+<div class="row justify-content-center">
+    <div class="col-12 col-lg-10 col-xl-9">
+        <a class="back-link" href="{{ '/blog/' | relative_url }}"><i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i> All posts</a>
+
+        <article class="surface post"{% if page.lang %} lang="{{ page.lang }}"{% endif %}>
+            <header class="post-head">
+                <p class="post-meta">
+                    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time><span class="dot" aria-hidden="true">·</span>{{ rt | strip }} min read
+                </p>
+                <h1 class="post-title">{{ page.title }}</h1>
+                {%- if page.description -%}<p class="post-dek">{{ page.description }}</p>{%- endif -%}
+                {%- if page.tags.size > 0 -%}
+                <div class="tag-row">{% for t in page.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>
+                {%- endif -%}
+            </header>
+            {%- if page.cover -%}
+            <figure class="post-cover">
+                <img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt }}">
+                {% if page.cover_caption %}<figcaption>{{ page.cover_caption }}</figcaption>{% endif %}
+            </figure>
+            {%- endif -%}
+            <div class="prose">
+                {{ content }}
+            </div>
+        </article>
+
+        {%- if page.previous or page.next -%}
+        <nav class="post-nav" aria-label="More posts">
+            {%- if page.previous -%}
+            <a class="post-nav-card" rel="prev" href="{{ page.previous.url | relative_url }}">
+                <span class="label"><i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i> Older</span>
+                <span class="t">{{ page.previous.title }}</span>
+            </a>
+            {%- endif -%}
+            {%- if page.next -%}
+            <a class="post-nav-card is-next" rel="next" href="{{ page.next.url | relative_url }}">
+                <span class="label">Newer <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
+                <span class="t">{{ page.next.title }}</span>
+            </a>
+            {%- endif -%}
+        </nav>
+        {%- endif -%}
+    </div>
+</div>

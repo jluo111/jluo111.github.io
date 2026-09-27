@@ -2,11 +2,11 @@
 title: "Accelerating Eigenvalue Dataset Generation via Chebyshev Subspace Filter"
 date: 2026-04-23 00:01:00 +0800
 selected: false
-pub: "International Conference on Learning and Representations (ICLR)"
+pub: "International Conference on Learning Representations (ICLR)"
 pub_date: "2026"
 # semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-
-  we propose a novel method, named Sorting Chebyshev Subspace Filter (SCSF), which significantly accelerates eigenvalue data generation by leveraging similarities between operators—a factor overlooked by existing methods. SCSF employs truncated fast Fourier transform sorting to group operators with similar eigenvalue distributions and constructs a Chebyshev subspace filter that leverages eigenpairs from previously solved problems to assist in solving subsequent ones, reducing redundant computations.
+  We propose a novel method, named Sorting Chebyshev Subspace Filter (SCSF), which significantly accelerates eigenvalue data generation by leveraging similarities between operators—a factor overlooked by existing methods. SCSF employs truncated fast Fourier transform sorting to group operators with similar eigenvalue distributions and constructs a Chebyshev subspace filter that leverages eigenpairs from previously solved problems to assist in solving subsequent ones, reducing redundant computations.
 cover: /assets/images/covers/SCSF_cover.jpg
 authors:
   - Hong Wang

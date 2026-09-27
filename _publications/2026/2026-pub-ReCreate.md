@@ -1,11 +1,11 @@
 ---
-title: "ReCreate: An Experience-Driven Framework for the Automatic Creation of Domain Agents"
+title: "ReCreate: Reasoning and Creating Domain Agents Driven by Experience"
 date: 2026-09-12 00:01:00 +0800
 selected: false
 pub: "Annual Meeting of the Association for Computational Linguistics (ACL)"
 # pub_pre: "Submitted to "
 # pub_post: 'Under review.'
-# pub_last: ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
+# award: Spotlight            # or: awards: [Oral, Best Paper Award]   |   status: Under Review
 pub_date: "2026"
 # semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-
@@ -15,7 +15,7 @@ authors:
   - Zhezheng Hao
   - Hong Wang
   - Jian Luo
-  - Jiaqing Zhang
+  - Jianqing Zhang
   - Yuyan Zhou
   - Qiang Lin
   - Can Wang

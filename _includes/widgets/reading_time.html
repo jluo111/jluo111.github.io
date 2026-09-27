@@ -1,0 +1,15 @@
+{%- comment -%}
+    Estimated reading time of `include.content` in minutes.
+    Chinese/Japanese text has almost no spaces, so when the average "word" is very
+    long we count characters (~400/min) instead of words (~220/min).
+{%- endcomment -%}
+{%- assign _text = include.content | strip_html | strip_newlines -%}
+{%- assign _words = _text | number_of_words | at_least: 1 -%}
+{%- assign _chars = _text | size -%}
+{%- assign _chars_per_word = _chars | divided_by: _words -%}
+{%- if _chars_per_word > 12 -%}
+    {%- assign _minutes = _chars | divided_by: 400 -%}
+{%- else -%}
+    {%- assign _minutes = _words | divided_by: 220 -%}
+{%- endif -%}
+{{- _minutes | at_least: 1 -}}
