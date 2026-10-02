@@ -22,12 +22,12 @@ github: jluo111
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    I am a second-year Ph.D. student in the Department of Applied Mathematics and Statistics at Stony Brook University, advised by Prof. Chao Chen.
+    I am a Ph.D. student in the Department of Applied Mathematics and Statistics at Stony Brook University, advised by Prof. Chao Chen.
     My current research interests focus on the post-training and applications of large language models.
     If you share similar interests and would like to connect, feel free to reach out via email.
   </p>
   <p>
-    Before joining Stony Brook University, I received my M.E. degree in Electronic Engineering from University of Science and Technology of China in 2025.
+    Before joining Stony Brook University, I received my Master degree from University of Science and Technology of China in 2025.
     During my master's program, I worked on several nice research projects related to deep learning and its applications.
   </p>
 
@@ -35,7 +35,7 @@ short_bio: >-
 interests:
   - LLM post-training
   - Reinforcement learning for reasoning
-  - Neural operators & scientific ML
+  - AI4Science
 
 portrait_url: /assets/images/photos/Portrait SD.jpg
 portrait_caption: >-
