@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* ==========================================================================
-   Scholar's Page — site styles on top of Bootstrap 4.6
+   Site styles on top of Bootstrap 4.6 — navy + neutral greys, no decoration beyond hairlines
    Sections: 1 tokens (light + dark) · 2 base · 3 navbar & theme switch
              4 surfaces & pills · 5 profile · 6 publication item · 7 award badges
              8 year nav · 9 blog list · 10 post page · 11 footer · 12 motion safety
@@ -25,119 +25,89 @@
     /* --- light theme --- */
     color-scheme: light;
     /* surfaces */
-    --paper: #FAF8F4;          /* page background */
-    --surface: #FFFFFF;        /* cards */
-    --surface-2: #FCFBF8;      /* row hover */
-    --stone: #F3EFE7;          /* inline code, quiet fills */
-    --code-bg: #F7F4EE;        /* fenced code */
-    --line: #E8E2D8;           /* hairlines */
-    --line-strong: #D6CEC0;    /* pill borders, rails */
+    --paper: #F5F6F8; --surface: #FFFFFF; --surface-2: #F8F9FB; --stone: #EEF0F3; --code-bg: #F6F8FA;
+    --line: #E3E6EA; --line-strong: #C9CFD7;
     /* text */
-    --ink: #1A1D24;            /* headings, titles, own name */
-    --text: #2E2C29;           /* body */
-    --text-2: #4A4640;         /* authors, secondary */
-    --muted: #6B655D;          /* meta, abstract, footer (lowest colour allowed for text) */
-    --nav: #57524B;            /* inactive nav links */
-    /* identity */
-    --brand: #1B365D;          /* navbar name, active-page underline, active year, code rail */
-    --rule-a: #1B365D;         /* navbar top rule, 3px */
-    --rule-b: #A6824A;         /* navbar top rule, 1px */
-    --nav-bg: rgba(250, 248, 244, .88);
-    --link: #1F4E8C;
-    --link-hover: #173D70;
-    --link-200: #C5D4EA;       /* underline tint, pill hover border */
-    --link-50: #EEF3FA;        /* pill hover fill */
-    --gold: #A6824A;           /* decoration only: rules, portrait ring, markers */
-    --gold-text: #7F6128;      /* gold used as text (eyebrows) */
-    --gold-200: #E6D5B0;       /* portrait ring */
+    --ink: #1C2026; --text: #2B3036; --text-2: #4A5059; --muted: #646A73; --nav: #4A5059;
+    /* identity: one navy accent */
+    --brand: #1B365D; --rule: #1B365D; --accent: #1B365D; --eyebrow: #646A73; --ring: #D5DAE1;
+    --nav-bg: rgba(245, 246, 248, .88);
+    --link: #1A4D8F; --link-hover: #143A6E; --link-200: #C3D3EA; --link-50: #EDF2F9;
     /* components */
-    --chip-bg: #F3EFE7; --chip-bd: #E2DACB; --chip-fg: #2F2B26;       /* venue chip */
-    --tag-bg: #F3EFE7; --tag-fg: #5F594F;                            /* blog tags */
-    --code-bd: #E6DFD2; --code-fg: #2B2925; --inline-code-fg: #4A4640;
-    --mark-bg: #FBF4E2;
-    --selection-bg: #EBDDBB; --selection-fg: #1A1D24;
-    --tooltip-bg: #1A1D24; --tooltip-fg: #FFFFFF;
-    --cover-bg: #FFFFFF;       /* box behind paper figures */
-    --cover-mat: #F3EFE7;      /* mat around the figure */
-    --img-filter: none;        /* applied to figures and cover images */
-    --btn-bg: #1B365D; --btn-bg-hover: #142A49; --btn-fg: #FFFFFF;
-    --icon-hover: #1B365D;     /* profile icon buttons, hovered */
-    --shadow-1: 0 1px 2px rgba(28, 25, 20, .04), 0 4px 14px -6px rgba(28, 25, 20, .08);
-    --shadow-2: 0 2px 4px rgba(28, 25, 20, .05), 0 16px 32px -12px rgba(28, 25, 20, .16);
-    --nav-shadow: 0 8px 24px -14px rgba(28, 25, 20, .22);
-    --portrait-shadow: 0 14px 28px -12px rgba(28, 25, 20, .4);
+    --chip-bg: #EEF0F3; --chip-bd: #D8DDE4; --chip-fg: #2B3036;
+    --tag-bg: #EEF0F3; --tag-fg: #4A5059;
+    --code-bd: #DFE3E8; --code-fg: #24292F; --inline-code-fg: #3F454D;
+    --mark-bg: #E4ECF7;
+    --selection-bg: #CFDCF0; --selection-fg: #1C2026;
+    --tooltip-bg: #1C2026; --tooltip-fg: #FFFFFF;
+    --cover-bg: #FFFFFF; --cover-mat: #EEF0F3; --img-filter: none;
+    --btn-bg: #1B365D; --btn-bg-hover: #142A49; --btn-fg: #FFFFFF; --icon-hover: #1B365D;
+    --shadow-1: 0 1px 2px rgba(20, 24, 30, .04), 0 4px 14px -6px rgba(20, 24, 30, .08);
+    --shadow-2: 0 2px 4px rgba(20, 24, 30, .05), 0 16px 32px -12px rgba(20, 24, 30, .16);
+    --nav-shadow: 0 8px 24px -14px rgba(20, 24, 30, .22);
+    --portrait-shadow: 0 14px 28px -12px rgba(20, 24, 30, .35);
     /* day / night switch */
-    --toggle-track: #EFEAE0; --toggle-bd: #8E8677; --toggle-thumb: #1B365D;   /* navy knob... */
-    --toggle-icon: #6B655D;    /* the icon the knob is not on */
-    --toggle-icon-on: #F3D58C; /* ...carrying a gold sun */
-    /* award badges: text / fill / border per tier */
-    --aw-best-fg: #F3D58C; --aw-best-bg: #1B365D; --aw-best-bg2: #23426F; --aw-best-bd: #1B365D;
-    --aw-best-ic: #E0B85A; --aw-best-ring: rgba(224, 184, 90, .45);
-    --aw-honor-fg: #6D4B0A;     --aw-honor-bg: #FBF4E2;     --aw-honor-bd: #E8D3A0;      /* amber */
-    --aw-oral-fg: #8A1F33;      --aw-oral-bg: #F9ECEE;      --aw-oral-bd: #EBC6CD;       /* garnet */
-    --aw-spotlight-fg: #5A3677; --aw-spotlight-bg: #F4EEF8; --aw-spotlight-bd: #DCCDE7;  /* amethyst */
-    --aw-highlight-fg: #0F5E66; --aw-highlight-bg: #E8F4F4; --aw-highlight-bd: #B7D9DB;  /* teal */
-    --aw-workshop-fg: #365C2A;  --aw-workshop-bg: #EFF5EA;  --aw-workshop-bd: #C9DABD;   /* laurel */
-    --aw-poster-fg: #57524B;    --aw-poster-bg: #FFFFFF;    --aw-poster-bd: #D6CEC0;     /* neutral outline */
-    --aw-pending-fg: #625C54;   --aw-pending-bg: #FFFFFF;   --aw-pending-bd: #C9C0B2;    /* dashed */
-    --aw-generic-fg: #37445A;   --aw-generic-bg: #EFF1F4;   --aw-generic-bd: #D5DBE4;    /* slate */
-    /* code highlighting (Rouge), all ≥ 4.5:1 on --code-bg */
-    --hl-c: #6F685E;  /* comment */      --hl-k: #1B365D;  /* keyword */
-    --hl-b: #0F5E66;  /* builtin, type */ --hl-s: #1E6A4A;  /* string */
-    --hl-n: #8A5300;  /* number */        --hl-f: #5A3677;  /* function, class */
-    --hl-t: #8A1F33;  /* tag, decorator */ --hl-v: #1F4E8C; /* variable */
-    --hl-o: #4A453E;  /* operator */      --hl-h: #1B365D;  /* diff heading */
+    --toggle-track: #E9ECF0; --toggle-bd: #7C8593; --toggle-thumb: #1B365D;
+    --toggle-icon: #646A73; --toggle-icon-on: #FFFFFF;
+    /* award badges: text / fill / border per tier (top tier is solid navy) */
+    --aw-best-fg: #FFFFFF; --aw-best-bg: #1B365D; --aw-best-bg2: #26457A; --aw-best-bd: #1B365D; --aw-best-ic: #FFFFFF;
+    --aw-honor-fg: #1B365D; --aw-honor-bg: #EDF2F9; --aw-honor-bd: #C3D3EA;
+    --aw-oral-fg: #8A1F33; --aw-oral-bg: #F9ECEE; --aw-oral-bd: #EBC6CD;
+    --aw-spotlight-fg: #5A3677; --aw-spotlight-bg: #F4EEF8; --aw-spotlight-bd: #DCCDE7;
+    --aw-highlight-fg: #0F5E66; --aw-highlight-bg: #E8F4F4; --aw-highlight-bd: #B7D9DB;
+    --aw-workshop-fg: #365C2A; --aw-workshop-bg: #EFF5EA; --aw-workshop-bd: #C9DABD;
+    --aw-poster-fg: #4A5059; --aw-poster-bg: #FFFFFF; --aw-poster-bd: #8A93A0;
+    --aw-pending-fg: #5C626B; --aw-pending-bg: #FFFFFF; --aw-pending-bd: #8A93A0;
+    --aw-generic-fg: #37445A; --aw-generic-bg: #EFF1F4; --aw-generic-bd: #D5DBE4;
+    /* code highlighting (Rouge) */
+    --hl-c: #6A737D; --hl-k: #1B365D; --hl-b: #0F5E66; --hl-s: #1E6A4A; --hl-n: #0550AE;
+    --hl-f: #5A3677; --hl-t: #8A1F33; --hl-v: #1A4D8F; --hl-o: #454B52; --hl-h: #1B365D;
     --hl-del-fg: #8A1F33; --hl-del-bg: #FBECEC; --hl-ins-fg: #1E5E43; --hl-ins-bg: #E8F3EC;
 }
 
-/* --- dark theme ("midnight navy"): navy becomes the page, ivory the ink, gold stays the one warm accent.
-       Every text/background pair below was computed to pass WCAG AA (4.5:1; 3:1 for non-text marks).
-       Screen only: printouts always use the light theme. --paper is repeated in _includes/theme_init.html. --- */
+/* --- dark theme: neutral graphite, same navy accent. Every pair below passes WCAG AA; screen only,
+       printouts always use the light theme. --paper is repeated in _includes/theme_init.html. --- */
 @media not print {
 :root[data-theme="dark"] {
     color-scheme: dark;
     /* surfaces */
-    --paper: #0B1321; --surface: #131D31; --surface-2: #182439; --stone: #1D2A43; --code-bg: #0D1626;
-    --line: #25324D; --line-strong: #3A4A6E;
+    --paper: #111418; --surface: #191D23; --surface-2: #1E232A; --stone: #242A32; --code-bg: #14171C;
+    --line: #2B313A; --line-strong: #3E4652;
     /* text */
-    --ink: #F3EEE1; --text: #D9D4C7; --text-2: #B9B6AD; --muted: #989CA6; --nav: #AEB2BC;
-    /* identity */
-    --brand: #E6CF9C; --rule-a: #4A6CAD; --rule-b: #C9A25C;
-    --nav-bg: rgba(11, 19, 33, .92);
-    --link: #8FB4EC; --link-hover: #B9D2F8; --link-200: #3D5A8E; --link-50: #1A2A47;
-    --gold: #C9A25C; --gold-text: #D9B874; --gold-200: #8F7745;
+    --ink: #ECEAE6; --text: #D5D3CF; --text-2: #B5B3AE; --muted: #9A9DA2; --nav: #B0B3B8;
+    /* identity: one navy accent */
+    --brand: #E6E9EE; --rule: #4A6CAD; --accent: #7D93B8; --eyebrow: #9A9DA2; --ring: #3E4652;
+    --nav-bg: rgba(17, 20, 24, .9);
+    --link: #8FB4EC; --link-hover: #B9D2F8; --link-200: #3D5A8E; --link-50: #1C2A40;
     /* components */
-    --chip-bg: #1D2A43; --chip-bd: #35456A; --chip-fg: #E6E1D4;
-    --tag-bg: #1D2A43; --tag-fg: #B4B8C2;
-    --code-bd: #25324D; --code-fg: #D9D4C7; --inline-code-fg: #CFCABD;
-    --mark-bg: #4A3B17;
-    --selection-bg: #6B5526; --selection-fg: #FBF6EA;
-    --tooltip-bg: #ECE6D8; --tooltip-fg: #101828;
-    /* paper figures are dimmed, never inverted; the mat is painted on the filtered image, so it displays as --stone */
-    --cover-bg: #DBDBDB; --cover-mat: #22314E; --img-filter: brightness(.86);
-    --btn-bg: #35578F; --btn-bg-hover: #4166A3; --btn-fg: #F6F1E4;
-    --icon-hover: #B9D2F8;
+    --chip-bg: #242A32; --chip-bd: #3A424D; --chip-fg: #E3E2DF;
+    --tag-bg: #242A32; --tag-fg: #B5B3AE;
+    --code-bd: #2B313A; --code-fg: #D5D3CF; --inline-code-fg: #CFCDC8;
+    --mark-bg: #2A3A52;
+    --selection-bg: #2F4A7A; --selection-fg: #F2F4F8;
+    --tooltip-bg: #E8E8E6; --tooltip-fg: #15181D;
+    --cover-bg: #DBDBDB; --cover-mat: #2A3139; --img-filter: brightness(.86);
+    --btn-bg: #35578F; --btn-bg-hover: #4166A3; --btn-fg: #F3F5F8; --icon-hover: #B9D2F8;
     --shadow-1: 0 1px 2px rgba(0, 0, 0, .30), 0 4px 14px -6px rgba(0, 0, 0, .45);
     --shadow-2: 0 2px 4px rgba(0, 0, 0, .35), 0 18px 36px -12px rgba(0, 0, 0, .65);
     --nav-shadow: 0 10px 28px -14px rgba(0, 0, 0, .75);
     --portrait-shadow: 0 14px 28px -12px rgba(0, 0, 0, .7);
     /* day / night switch */
-    --toggle-track: #0B1321; --toggle-bd: #61729A; --toggle-thumb: #C9A25C;
-    --toggle-icon: #989CA6; --toggle-icon-on: #0B1321;
-    /* award badges: same hue per tier as by day, dark tinted fill + light lettering */
-    --aw-best-fg: #F6DC9A; --aw-best-bg: #24457A; --aw-best-bg2: #2E5590; --aw-best-bd: #C9A25C;
-    --aw-best-ic: #E8C468; --aw-best-ring: rgba(224, 184, 90, .55);
-    --aw-honor-fg: #EBCB85; --aw-honor-bg: #33270F; --aw-honor-bd: #6B5420;
+    --toggle-track: #111418; --toggle-bd: #5F6875; --toggle-thumb: #D9DEE6;
+    --toggle-icon: #9A9DA2; --toggle-icon-on: #111418;
+    /* award badges: text / fill / border per tier (top tier is solid navy) */
+    --aw-best-fg: #FFFFFF; --aw-best-bg: #2E4C80; --aw-best-bg2: #38599A; --aw-best-bd: #4D6DA8; --aw-best-ic: #FFFFFF;
+    --aw-honor-fg: #B9D2F8; --aw-honor-bg: #1C2A40; --aw-honor-bd: #3D5A8E;
     --aw-oral-fg: #F2B3BF; --aw-oral-bg: #3A1820; --aw-oral-bd: #73303F;
     --aw-spotlight-fg: #D4BBEA; --aw-spotlight-bg: #2B1F3D; --aw-spotlight-bd: #574075;
     --aw-highlight-fg: #9ED6DB; --aw-highlight-bg: #102F33; --aw-highlight-bd: #25636A;
     --aw-workshop-fg: #B5D6A6; --aw-workshop-bg: #1B2E18; --aw-workshop-bd: #3F6335;
-    --aw-poster-fg: #B9BDC6; --aw-poster-bg: #131D31; --aw-poster-bd: #6A7794;
-    --aw-pending-fg: #A9AEB9; --aw-pending-bg: #131D31; --aw-pending-bd: #6A7794;
-    --aw-generic-fg: #C3CCDB; --aw-generic-bg: #1F2A3F; --aw-generic-bd: #3F4E6D;
+    --aw-poster-fg: #B9BDC6; --aw-poster-bg: #191D23; --aw-poster-bd: #6A7380;
+    --aw-pending-fg: #A9AEB9; --aw-pending-bg: #191D23; --aw-pending-bd: #6A7380;
+    --aw-generic-fg: #C3CCDB; --aw-generic-bg: #232A36; --aw-generic-bd: #3F4A5C;
     /* code highlighting (Rouge) */
-    --hl-c: #8B919D; --hl-k: #B7C9EE; --hl-b: #7FCDD4; --hl-s: #8FD0A8; --hl-n: #E5B06A;
-    --hl-f: #C9A9E6; --hl-t: #F09AAB; --hl-v: #8FB4EC; --hl-o: #B5B9C2; --hl-h: #E6CF9C;
+    --hl-c: #8B919D; --hl-k: #B7C9EE; --hl-b: #7FCDD4; --hl-s: #8FD0A8; --hl-n: #79C0FF;
+    --hl-f: #C9A9E6; --hl-t: #F09AAB; --hl-v: #8FB4EC; --hl-o: #B5B9C2; --hl-h: #B7C9EE;
     --hl-del-fg: #F2A9B5; --hl-del-bg: #3A1A21; --hl-ins-fg: #9AD8B4; --hl-ins-bg: #14301F;
 }
 }
@@ -192,12 +162,12 @@ html.theme-switching *, html.theme-switching *::before, html.theme-switching *::
     html.theme-switching .theme-switch-thumb { transition: transform .3s var(--ease) !important; }
 }
 
-/* ===== 3. Navbar: two-colour top rule, frosted paper; day / night switch ===== */
+/* ===== 3. Navbar: navy top rule, frosted page colour; day / night switch ===== */
 .site-nav {
     min-height: 68px;
-    padding: calc(.5rem + 4px) 0 .5rem;
+    padding: calc(.5rem + 3px) 0 .5rem;
     background-color: var(--nav-bg);
-    background-image: linear-gradient(to bottom, var(--rule-a) 0, var(--rule-a) 3px, var(--rule-b) 3px, var(--rule-b) 4px, transparent 4px);
+    background-image: linear-gradient(to bottom, var(--rule) 0, var(--rule) 3px, transparent 3px);
     -webkit-backdrop-filter: saturate(160%) blur(14px);
     backdrop-filter: saturate(160%) blur(14px);
     border-bottom: 1px solid var(--line);
@@ -250,7 +220,7 @@ html.theme-switching *, html.theme-switching *::before, html.theme-switching *::
     cursor: pointer;
     transition: background-color .25s ease, border-color .25s ease;
 }
-.theme-switch:hover { border-color: var(--gold); }
+.theme-switch:hover { border-color: var(--brand); }
 .theme-switch-thumb {
     position: absolute; top: 2px; left: 2px;
     width: 22px; height: 22px; border-radius: 50%;
@@ -294,13 +264,13 @@ html.theme-switching *, html.theme-switching *::before, html.theme-switching *::
     border-bottom: 1px solid var(--line);
 }
 .section-title { font-size: 1.5rem; line-height: 1.25; margin: 0 0 1.25rem; }
-.section-title::after { content: ""; display: block; width: 28px; height: 2px; margin-top: .6rem; background: var(--gold); border-radius: 2px; }
+.section-title::after { content: ""; display: block; width: 28px; height: 2px; margin-top: .6rem; background: var(--accent); border-radius: 2px; }
 .more-link { font-size: .875rem; font-weight: 600; white-space: nowrap; }
 .more-link i { margin-left: .25rem; transition: transform .2s var(--ease); }
 .more-link:hover { text-decoration: none; }
 .more-link:hover i { transform: translateX(3px); }
 .page-head { padding: 1rem 0 .75rem; max-width: 46rem; }
-.eyebrow { margin: 0 0 .5rem; font: 700 .75rem/1 var(--font-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--gold-text); }
+.eyebrow { margin: 0 0 .5rem; font: 700 .75rem/1 var(--font-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--eyebrow); }
 .page-title { font-size: clamp(2rem, 1.4rem + 2vw, 2.625rem); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 .75rem; }
 .page-lede { margin: 0; font-size: .9375rem; color: var(--muted); }
 .empty-state { text-align: center; color: var(--muted); }
@@ -325,7 +295,7 @@ html.theme-switching *, html.theme-switching *::before, html.theme-switching *::
 .portrait {
     display: block; width: 148px; height: 148px; margin: 0 auto 1.25rem;
     border-radius: 50%; object-fit: cover;
-    box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--gold-200), var(--portrait-shadow);
+    box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--ring), var(--portrait-shadow);
 }
 @media (min-width: 768px) and (max-width: 991.98px) { .portrait { width: 128px; height: 128px; } }
 .profile-name { font-size: 1.5rem; line-height: 1.2; margin: 0 0 .35rem; }
@@ -350,13 +320,12 @@ html.theme-switching *, html.theme-switching *::before, html.theme-switching *::
 .bio a:hover { text-decoration-color: currentColor; }
 .bio--justify { text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
 .interests { margin: 1.25rem 0 0; font-family: var(--font-serif); font-style: italic; color: var(--text-2); }
-.interests-label { display: block; margin-bottom: .25rem; font: 700 .72rem/1.4 var(--font-sans); font-style: normal; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-text); }
-.interest + .interest::before { content: "·"; margin: 0 .55em; color: var(--gold); font-style: normal; }
+.interests-label { display: block; margin-bottom: .25rem; font: 700 .72rem/1.4 var(--font-sans); font-style: normal; letter-spacing: .14em; text-transform: uppercase; color: var(--eyebrow); }
+.interest + .interest::before { content: "·"; margin: 0 .55em; color: var(--muted); font-style: normal; }
 
 /* ===== 6. Publication item ===== */
 .pub { position: relative; padding: 1.75rem 2rem; border-top: 1px solid var(--line); transition: background-color .2s ease; }
 .pub-list > .pub:first-child { border-top: 0; }
-.pub:has(.award--best) { box-shadow: inset 3px 0 0 var(--gold); }   /* gold rail on top-tier rows */
 .pub-cover {
     display: block; position: relative; aspect-ratio: 3 / 2;
     background: var(--cover-bg); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden;
@@ -394,7 +363,7 @@ html.theme-switching *, html.theme-switching *::before, html.theme-switching *::
 .pub-authors { margin: 0 0 .15rem; font-size: .9375rem; line-height: 1.55; color: var(--text-2); }
 .pub-authors .text-body { color: var(--text-2) !important; }
 .pub-authors a.text-body:hover { color: var(--link) !important; text-decoration: none; }
-.pub-authors strong { font-weight: 700; color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 1.5px; text-underline-offset: .22em; }
+.pub-authors strong { font-weight: 700; color: var(--ink); }
 .pub-authors mark { background: none; padding: 0; color: var(--muted); font-size: .8125rem; white-space: nowrap; }
 .pub-venue { margin: 0 0 .5rem; font: 400 .9375rem/1.5 var(--font-serif); color: var(--text-2); }
 @media (max-width: 575.98px) { .pub-venue--has-chip { display: none; } }
@@ -429,12 +398,10 @@ html.theme-switching *, html.theme-switching *::before, html.theme-switching *::
 }
 .award i { font-size: .6875rem; color: var(--ic); }
 a.award:hover { text-decoration: none; color: var(--fg); filter: brightness(.98); }
-.award--best {                                   /* Best / Outstanding paper: gold on navy */
+.award--best {                                   /* Best / Outstanding paper: solid navy */
     --fg: var(--aw-best-fg); --bg: var(--aw-best-bg); --bd: var(--aw-best-bd); --ic: var(--aw-best-ic);
     background-image: linear-gradient(180deg, var(--aw-best-bg2) 0%, var(--aw-best-bg) 100%);
-    box-shadow: inset 0 0 0 1px var(--aw-best-ring), 0 2px 6px -2px rgba(27, 54, 93, .45);
 }
-:root[data-theme="dark"] .award--best { box-shadow: inset 0 0 0 1px var(--aw-best-ring), 0 1px 2px rgba(0, 0, 0, .4); }
 :root[data-theme="dark"] a.award:hover { filter: brightness(1.1); }
 .award--honor     { --fg: var(--aw-honor-fg);     --bg: var(--aw-honor-bg);     --bd: var(--aw-honor-bd); }
 .award--oral      { --fg: var(--aw-oral-fg);      --bg: var(--aw-oral-bg);      --bd: var(--aw-oral-bd); }
@@ -452,7 +419,7 @@ a.award:hover { text-decoration: none; color: var(--fg); filter: brightness(.98)
 .year-heading::after { content: ""; order: 1; flex: 1 1 auto; height: 1px; background: linear-gradient(90deg, var(--line-strong), transparent); }
 .year-heading small { order: 2; font: 600 .75rem/1 var(--font-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .year-nav.sticky-top { top: 100px; margin-top: 4.25rem; border-left: 1px solid var(--line-strong); }
-.year-nav-label { padding: 0 0 .4rem 1rem; font: 700 .7rem/1.4 var(--font-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--gold-text); }
+.year-nav-label { padding: 0 0 .4rem 1rem; font: 700 .7rem/1.4 var(--font-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--eyebrow); }
 .year-nav .nav-link {
     display: flex; justify-content: space-between;
     margin-left: -1px; padding: .3rem 0 .3rem 1rem;
@@ -475,11 +442,11 @@ a.award:hover { text-decoration: none; color: var(--fg); filter: brightness(.98)
 /* ===== 9. Blog list ===== */
 .post-item .row > [class*="col"] { position: static; }   /* so the stretched title link covers the whole row */
 .post-meta { margin: 0 0 .45rem; font: 600 .75rem/1.4 var(--font-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-variant-numeric: tabular-nums; }
-.dot { margin: 0 .5em; color: var(--gold); }
+.dot { margin: 0 .5em; color: var(--muted); }
 .post-excerpt { margin: 0 0 .75rem; font-size: .9375rem; line-height: 1.6; color: var(--muted); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
 .tag-row { display: flex; flex-wrap: wrap; gap: .4rem; }
 .tag { display: inline-flex; align-items: center; height: 22px; padding: 0 .5rem; border-radius: var(--r-xs); background: var(--tag-bg); color: var(--tag-fg); font: 600 .75rem/1 var(--font-sans); }
-.tag::before { content: "#"; margin-right: 1px; color: var(--gold-text); }
+.tag::before { content: "#"; margin-right: 1px; color: var(--muted); }
 
 /* ===== 10. Post page ===== */
 .back-link { display: inline-flex; align-items: center; gap: .4rem; margin: 0 0 1rem; font-size: .875rem; font-weight: 600; color: var(--muted); }
@@ -511,12 +478,12 @@ a.award:hover { text-decoration: none; color: var(--fg); filter: brightness(.98)
 .prose strong { font-weight: 700; color: var(--ink); }
 .prose ul, .prose ol { padding-left: 1.4em; }
 .prose li { margin: .35em 0; }
-.prose li::marker { color: var(--gold); }
-.prose ol > li::marker { font: 600 .9em var(--font-sans); color: var(--gold-text); }
-.prose blockquote { padding: .15em 0 .15em 1.25em; border-left: 2px solid var(--gold); font-style: italic; color: var(--text-2); }
+.prose li::marker { color: var(--accent); }
+.prose ol > li::marker { font: 600 .9em var(--font-sans); color: var(--muted); }
+.prose blockquote { padding: .15em 0 .15em 1.25em; border-left: 2px solid var(--accent); font-style: italic; color: var(--text-2); }
 .prose blockquote p:last-child { margin-bottom: 0; }
 .prose hr { border: 0; margin: 2.75em 0; text-align: center; overflow: visible; }
-.prose hr::after { content: "\2022\2002\2022\2002\2022"; color: var(--gold); }
+.prose hr::after { content: "\2022\2002\2022\2002\2022"; color: var(--muted); }
 .prose img { display: block; max-width: 100%; height: auto; margin: 2em auto .6em; border-radius: var(--r-md); filter: var(--img-filter); }
 .prose p > img + em { display: block; margin-bottom: 2em; text-align: center; font: 400 .875rem/1.5 var(--font-sans); font-style: normal; color: var(--muted); }
 .prose mark { background: var(--mark-bg); color: var(--ink); padding: 0 .15em; border-radius: 2px; }

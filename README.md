@@ -41,7 +41,7 @@ links:
 ---
 ```
 
-Badge colours are chosen from the award text: *Best / Outstanding / … Award* (gold on navy),
+Badge colours are chosen from the award text: *Best / Outstanding / … Award* (white on navy),
 *Honorable Mention*, *Oral*, *Spotlight*, *Highlight*, *Workshop*, *Poster*, *Under Review*, *Preprint*.
 Anything else gets a neutral badge; force a tier with `awards: [{ name: "...", type: oral }]`.
 
